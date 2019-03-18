@@ -3,6 +3,11 @@
 module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'ficha-personal-bo-a',
+    fontawesome: {
+      icons: {
+        'free-solid-svg-icons': 'all'   
+      }
+    },
     environment,
     rootURL: '/',
     locationType: 'auto',
@@ -45,6 +50,8 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     // here you can enable a production-specific feature
+    ENV.baseURL = '/dist';
+    ENV.locationType = 'none';
   }
 
   return ENV;

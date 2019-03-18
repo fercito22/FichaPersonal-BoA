@@ -1,5 +1,36 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+{{#if  (is-eq loggedIn true) }}    
+        {{partial 'login'}}            
+{{/if}}
+ 
+{{#unless loggedIn}}
+    {{#if estadoSecion}}
+   
+        {{partial 'navbar'}}   
+        
+                           
+    {{/if}}
+    {{#unless estadoSecion}}
+        {{!-- {{partial 'navbar1'}}   --}}
+    {{/unless}} 
+    {{outlet}}  
+    {{partial 'footer'}}
+{{/unless}} 
 
-{{outlet}}
+<br>
+<br>
+<br>
+<br>
+<br>
+
+    
+
+
+    
+    {{!-- <script src="assets/Plantilla/js/sb-admin.min.js"></script>
+    <script src="assets/Plantilla/js/sb-admin-charts.min.js"></script>
+    <script src="assets/Pnotify/pnotify.custom.min.js"></script> --}}
+
+
+
+
+
